@@ -1,0 +1,29 @@
+h1{
+    text-align: center;
+    color: #136b6a;
+    margin: 30px;
+}
+
+.container img{
+    height: 400px;
+    width: 400px;
+}
+
+.container {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  button {
+    margin: 35px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    background-color: #7bbdbc;
+  }
+  
+  button:hover {
+    background-color: orange;
+  }
+  
