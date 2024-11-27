@@ -14,17 +14,24 @@ function SignIn() {
         setErrorMessage(""); // Clear previous error
 
         try {
-            const { user, error } = await supabase.auth.signInWithPassword({
+            // Attempt to sign in the user
+            const { data, error } = await supabase.auth.signInWithPassword({
                 email,
                 password,
             });
 
-            if (error) throw error;
+            if (error) throw error; // Throw error if any
 
-            console.log("User signed in:", user);
-            navigate("/dashboard"); // Redirect to a dashboard or home page after successful sign-in
+            // Sign-in was successful
+            console.log("User signed in:", data.user);
+
+            // Optionally store the user session or user details if needed
+            localStorage.setItem("user", JSON.stringify(data.user));
+
+            // Redirect to Home page after successful sign-in
+            navigate("/");
         } catch (error) {
-            setErrorMessage(error.message);
+            setErrorMessage(error.message); // Show error message if sign-in fails
         }
     };
 

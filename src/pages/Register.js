@@ -8,10 +8,10 @@ function Register() {
     const [password, setPassword] = useState("");
     const [errorMessage, setErrorMessage] = useState("");
 
-    // Handle sign-up
-    const handleSignUp = async (e) => {
+    // Handle registration
+    const handleRegister = async (e) => {
         e.preventDefault();
-        setErrorMessage(""); // Clear previous error
+        setErrorMessage(""); // Clear any previous error
 
         try {
             const { user, error } = await supabase.auth.signUp({
@@ -31,7 +31,7 @@ function Register() {
     return (
         <div style={styles.container}>
             <h1 style={styles.title}>Register</h1>
-            <form onSubmit={handleSignUp} style={styles.form}>
+            <form onSubmit={handleRegister} style={styles.form}>
                 <input
                     type="email"
                     placeholder="Email"
