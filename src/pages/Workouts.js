@@ -1,7 +1,7 @@
 import React from "react";
 import {Link} from "react-router-dom";
 import back from '../assets/back.png';
-import "../styles/workouts.css";
+import "../styles/workoutsanddiets.css";
 
 function Workouts() {
     return (
