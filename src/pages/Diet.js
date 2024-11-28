@@ -1,8 +1,22 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import back from '../assets/back.png';
+// Heart Disease Food pics
+import oatswberries from '../assets/food/oatswithberries.png';
+import avocadotoast from '../assets/food/avocadotoast.png';
+import scrambledwspinach from '../assets/food/scrambledwspinach.jpg';
+import nutsandseeds from '../assets/food/nutsandseeds.png';
+import grilledsalmon from '../assets/food/grilledsalmon.png';
+import lgsalad from '../assets/food/greensalad.png';
+import quinoaarveg from '../assets/food/quinoaarveg.png';
+import avochicksalad from '../assets/food/avochicksalad.jpg';
+import mixednuts from '../assets/food/mixednuts.png';
+import oatsporridge from '../assets/food/oatsporridge.png';
+import lentilsoup from '../assets/food/lentilsoup.png';
+import mushatofu from '../assets/food/mushatofu.png';
+
 import fruitsmoothies from '../assets/food/fruitsmoothies.png';
-import "../styles/workouts.css";
+import "../styles/workoutsanddiets.css";
 
 function Diet() {
     const [selectedCondition, setSelectedCondition] = useState("");
@@ -11,16 +25,22 @@ function Diet() {
     const foodLists = {
         heartDisease: {
             breakfast: [
-                { name: "Oats with Berries", image: "/assets/nuts.jpg", description: "A fiber-rich breakfast with oats and antioxidant-packed berries." },
-                { name: "Avocado Toast", image: "/assets/nuts.jpg", description: "Whole grain toast with mashed avocado and a sprinkle of seeds." }
+                { name: "Oats with Berries", image: oatswberries, description: "A fiber-rich breakfast with oats and antioxidant-packed berries." },
+                { name: "Avocado Toast", image: avocadotoast, description: "Whole grain toast with mashed avocado and a sprinkle of seeds." },
+                { name: "Scrambled Eggs with Spinach", image: scrambledwspinach, description: "Protein-packed breakfast with leafy greens." },
+                { name: "Nuts and Seeds Bowl", image: nutsandseeds, description: "A mix of heart-healthy nuts and seeds." }
             ],
             lunch: [
-                { name: "Grilled Salmon", image: "/assets/nuts.jpg", description: "Omega-3 rich grilled salmon served with veggies." },
-                { name: "Leafy Greens Salad", image: "/assets/nuts.jpg", description: "A refreshing salad with spinach, kale, and olive oil dressing." }
+                { name: "Grilled Salmon", image: grilledsalmon, description: "Omega-3 rich grilled salmon served with veggies." },
+                { name: "Leafy Greens Salad", image: lgsalad, description: "A refreshing salad with spinach, kale, and olive oil dressing." },
+                { name: "Quinoa and Roasted Veggies", image: quinoaarveg, description: "A protein-rich quinoa dish." },
+                { name: "Avocado Chicken Salad", image: avochicksalad, description: "Lean chicken with heart-healthy avocado." }
             ],
             dinner: [
-                { name: "Mixed Nuts", image: "/assets/nuts.jpg", description: "A mix of almonds, walnuts, and cashews, perfect for dinner." },
-                { name: "Oats Porridge", image: "/assets/nuts.jpg", description: "A warm, hearty bowl of oats with your choice of toppings." }
+                { name: "Mixed Nuts", image: mixednuts, description: "A mix of almonds, walnuts, and cashews, perfect for dinner." },
+                { name: "Oats Porridge", image: oatsporridge, description: "A warm, hearty bowl of oats with your choice of toppings." },
+                { name: "Lentil Soup", image: lentilsoup, description: "Rich in protein and fiber." },
+                { name: "Mushroom and Tofu Stir-fry", image: mushatofu, description: "This tofu veggie stir-fry is quick and easy, making it a great go-to weeknight meal." }
             ]
         },
         thyroid: {
