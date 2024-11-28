@@ -29,7 +29,7 @@ function SignIn() {
             localStorage.setItem("user", JSON.stringify(data.user));
 
             // Redirect to Home page after successful sign-in
-            navigate("/");
+            navigate("/upload");
         } catch (error) {
             setErrorMessage(error.message); // Show error message if sign-in fails
         }

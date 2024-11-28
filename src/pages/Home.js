@@ -91,7 +91,7 @@ const styles = {
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
-        padding: "0px",
+        padding: "20px",
     },
     subtitle: {
         fontSize: "2rem",

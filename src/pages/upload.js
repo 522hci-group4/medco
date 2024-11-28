@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { supabase } from "./supabaseClient"; // Make sure you have this set up correctly
+import { supabase } from "./supabaseClient"; // Make sure this file is correctly set up
 
-function Home() {
+function Upload() {
     const navigate = useNavigate();
     const [uploadStatus, setUploadStatus] = useState("");
+    const [userName, setUserName] = useState("");
 
     // Handle file upload
     const handleFileUpload = async (event) => {
@@ -15,13 +16,22 @@ function Home() {
             return;
         }
 
+        // Check if the user is logged in
+        const user = supabase.auth.user();
+        if (!user) {
+            alert("You must be logged in to upload files.");
+            return;
+        }
+
+        const userId = user.id;  // Get the user's unique ID
+
         setUploadStatus("Uploading...");
 
         try {
-            // Upload file to Supabase Storage
+            // Upload file to Supabase Storage under a user-specific folder
             const { data, error } = await supabase.storage
                 .from("pdf-uploads")  // Replace with your Supabase bucket name
-                .upload(`uploads/${file.name}`, file, {
+                .upload(`uploads/${userId}/${file.name}`, file, {
                     cacheControl: "3600", // Optional cache control
                     upsert: false, // Optional: set to false to avoid overwriting files
                 });
@@ -42,8 +52,21 @@ function Home() {
         }
     };
 
+    // Fetch the user's name from the logged-in user's metadata
+    useEffect(() => {
+        const user = supabase.auth.user();
+        if (user) {
+            const name = user.user_metadata ? user.user_metadata.full_name : "User";
+            setUserName(name);
+        }
+    }, []);
+
     return (
         <div style={styles.container}>
+            <div style={styles.header}>
+                {userName && <p style={styles.greeting}>Hi! {userName}</p>}
+            </div>
+
             <h1 style={styles.title}>MedCo</h1>
             <div style={styles.uploadSection}>
                 <label htmlFor="pdfUpload" style={styles.uploadLabel}>
@@ -71,6 +94,19 @@ const styles = {
         justifyContent: "center",
         height: "100vh",
         backgroundColor: "#e0f7f7", // Background color matching your design
+        padding: "20px",  // Added padding to avoid elements being stuck to the edges
+    },
+    header: {
+        width: "100%",
+        position: "absolute",
+        top: "20px",
+        right: "20px",
+        textAlign: "right",
+    },
+    greeting: {
+        fontSize: "1.2rem",
+        color: "#008080", // Teal color for the greeting
+        fontWeight: "bold",
     },
     title: {
         fontSize: "2rem",
@@ -94,4 +130,4 @@ const styles = {
     },
 };
 
-export default Home;
+export default Upload;
