@@ -1,0 +1,37 @@
+{
+    "terms": [
+      {
+        "name": "TSH",
+        "description": "Thyroid-Stimulating Hormone (TSH) regulates the production of thyroid hormones.",
+        "explanation": "TSH is like the gas pedal for your thyroid gland, telling it when to release hormones for energy and metabolism.",
+        "isAbnormal": true
+      },
+      {
+        "name": "Hemoglobin",
+        "description": "A protein in red blood cells that carries oxygen throughout the body.",
+        "explanation": "Think of hemoglobin as a bus that carries oxygen passengers to different parts of your body.",
+        "isAbnormal": false
+      },
+      {
+        "name": "White Blood Cells (WBC)",
+        "description": "Cells that help fight infections and protect against diseases.",
+        "explanation": "WBCs are like the body’s soldiers, fighting off invaders like bacteria and viruses.",
+        "isAbnormal": true
+      }
+    ],
+    "questions": [
+      {
+        "question": "What is TSH?",
+        "answer": "TSH stands for Thyroid-Stimulating Hormone, which regulates thyroid function."
+      },
+      {
+        "question": "Why is hemoglobin important?",
+        "answer": "Hemoglobin carries oxygen in your blood to all parts of your body."
+      },
+      {
+        "question": "What happens if WBC count is high?",
+        "answer": "A high WBC count might indicate an infection or inflammation in your body."
+      }
+    ]
+  }
+  
