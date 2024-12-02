@@ -15,7 +15,41 @@ import oatsporridge from '../assets/food/oatsporridge.png';
 import lentilsoup from '../assets/food/lentilsoup.png';
 import mushatofu from '../assets/food/mushatofu.png';
 
+// Thyroid Food pics
+import gyogurtswnuts from '../assets/food/gyogurtswnuts.png';
+import avoweggs from '../assets/food/avoweggs.png';
+import smoothiebowl from '../assets/food/smoothiebowl.png';
+import chiapudding from '../assets/food/chiapudding.png';
+import gchicksalad from '../assets/food/gchicksalad.png';
+import seaweedsalad from '../assets/food/seaweedsalad.jpg';
+import vegstirfry from '../assets/food/vegstirfry.png';
+import chickensoup from '../assets/food/chickensoup.png';
+import grilledfish from '../assets/food/grilledfish.png';
+import sgreens from '../assets/food/sgreens.jpg';
+import eggavegbowl from '../assets/food/eggavegbowl.jpg';
+
+
+// Diabetes Food pics
+import aboats from '../assets/food/aboats.jpg';
+import pancake from '../assets/food/pancake.jpg';
+import qsalad from '../assets/food/qsalad.png';
+import grilledchickwrap from '../assets/food/grilledchickwrap.png';
+import vegcurry from '../assets/food/vegcurry.png';
+import steamedfish from '../assets/food/steamedfish.png';
+import gveg from '../assets/food/gveg.png';
+import bakedsalmon from '../assets/food/bakedsalmon.png';
+import stirfriedg from '../assets/food/stirfriedg.jpg';
+
+//Cholestrol Food pics
+import oatswfruits from '../assets/food/oatswfruits.png';
 import fruitsmoothies from '../assets/food/fruitsmoothies.png';
+import gfishtaco from '../assets/food/gfishtaco.jpg';
+import chickpeasalad from '../assets/food/chickpeasalad.png';
+import gvegwrap from '../assets/food/gvegwrap.png';
+import vegsoup from '../assets/food/vegsoup.png';
+import rbrussels from '../assets/food/rbrussels.jpg';
+
+//Importing CSS
 import "../styles/workoutsanddiets.css";
 
 function Diet() {
@@ -45,44 +79,62 @@ function Diet() {
         },
         thyroid: {
             breakfast: [
-                { name: "Scrambled Eggs", image: "/assets/nuts.jpg", description: "Fluffy scrambled eggs with a side of spinach." },
-                { name: "Yogurt with Brazil Nuts", image: "/assets/yogurt.jpg", description: "Creamy yogurt with crunchy Brazil nuts for added selenium." }
+                { name: "Greek Yogurt with Nuts", image: gyogurtswnuts, description: "Rich in selenium and protein." },
+                { name: "Avocado and Eggs", image: avoweggs, description: "Healthy fats with high-quality protein." },
+                { name: "Smoothie Bowl", image: smoothiebowl, description: "Blend of fruits and nuts." },
+                { name: "Chia Pudding", image: chiapudding, description: "Chia seeds soaked in almond milk." }
             ],
             lunch: [
-                { name: "Grilled Chicken", image: "/assets/chicken.jpg", description: "Tender grilled chicken breast with a side of veggies." },
-                { name: "Seaweed Salad", image: "/assets/seaweed.jpg", description: "A light salad with seaweed, sesame seeds, and rice vinegar." }
+                { name: "Grilled Chicken Salad", image: gchicksalad, description: "High in protein and nutrients." },
+                { name: "Seaweed Salad", image: seaweedsalad, description: "Rich in iodine." },
+                { name: "Lentil Soup", image: lentilsoup, description: "A hearty meal with lentils and vegetables." },
+                { name: "Vegetable Stir-Fry", image: vegstirfry, description: "Broccoli and carrots in sesame oil." }
             ],
             dinner: [
-                { name: "Eggs and Avocado", image: "/assets/eggs.jpg", description: "Scrambled eggs with mashed avocado and a sprinkle of pepper." },
-                { name: "Chicken Stir-fry", image: "/assets/chicken-stir-fry.jpg", description: "Stir-fried chicken with mixed vegetables and ginger sauce." }
+                { name: "Chicken Soup", image: chickensoup, description: "Warm and comforting meal." },
+                { name: "Grilled Fish", image: grilledfish, description: "A thyroid-friendly source of protein." },
+                { name: "Sautéed Greens", image: sgreens, description: "Spinach and kale with garlic." },
+                { name: "Egg and Veggie Bowl", image: eggavegbowl, description: "Boiled eggs with steamed vegetables." }
             ]
         },
         diabetes: {
             breakfast: [
-                { name: "Whole Grain Pancakes", image: "/assets/whole-grains.jpg", description: "Fluffy whole grain pancakes with a drizzle of honey." },
-                { name: "Avocado Toast", image: "/assets/avocado.jpg", description: "Avocado toast topped with tomato and a squeeze of lemon." }
+                { name: "Oats with Almond Butter", image: aboats, description: "Fiber-packed oats with healthy fats." },
+                { name: "Whole Grain Pancakes", image: pancake, description: "Low-GI breakfast option." },
+                { name: "Chia Seed Pudding", image: chiapudding, description: "Rich in omega-3 fatty acids." },
+                { name: "Smoothie Bowl", image: smoothiebowl, description: "Fresh fruits blended with yogurt." }
             ],
             lunch: [
-                { name: "Leafy Greens Salad", image: "/assets/leafy-greens.jpg", description: "Fresh spinach, kale, and avocado with olive oil dressing." },
-                { name: "Grilled Chicken Wrap", image: "/assets/chicken-wrap.jpg", description: "A healthy wrap with grilled chicken and veggies." }
+                { name: "Quinoa Salad", image: qsalad, description: "Light and refreshing." },
+                { name: "Grilled Chicken Wrap", image: grilledchickwrap, description: "Low-carb wrap with grilled chicken." },
+                { name: "Vegetable Curry", image: vegcurry, description: "Rich in vitamins and low in carbs." },
+                { name: "Steamed Fish", image: steamedfish, description: "Light and flavorful." }
             ],
             dinner: [
-                { name: "Baked Salmon", image: "/assets/salmon.jpg", description: "Oven-baked salmon with a lemon dill sauce." },
-                { name: "Roasted Vegetables", image: "/assets/roasted-vegetables.jpg", description: "A mix of roasted carrots, zucchini, and bell peppers." }
+                { name: "Lentil Soup", image: lentilsoup, description: "Rich in protein and fiber." },
+                { name: "Grilled Vegetables", image: gveg, description: "A mix of roasted seasonal vegetables." },
+                { name: "Baked Salmon", image: bakedsalmon, description: "Protein-rich fish baked with herbs." },
+                { name: "Stir-Fried Greens", image: stirfriedg, description: "Lightly stir-fried kale and broccoli." }
             ]
         },
         cholesterol: {
             breakfast: [
-                { name: "Oats with Fruit", image: "/assets/oats.jpg", description: "Oats topped with fresh fruit for a heart-healthy breakfast." },
-                { name: "Fruit Smoothie", image: fruitsmoothies, description: "A refreshing smoothie made with fresh fruits and chia seeds." }
+                { name: "Oats with Fresh Fruits", image: oatswfruits, description: "Fiber-rich oats with sliced fruits." },
+                { name: "Avocado Toast", image: avocadotoast, description: "Whole grain toast with avocado." },
+                { name: "Fruit Smoothie", image: fruitsmoothies, description: "Fresh fruit smoothie with chia seeds." },
+                { name: "Chia Pudding", image: chiapudding, description: "Rich in omega-3 and protein." }
             ],
             lunch: [
-                { name: "Grilled Fatty Fish", image: "/assets/fatty-fish.jpg", description: "Grilled mackerel with a side of quinoa." },
-                { name: "Vegetable Stir-fry", image: "/assets/vegetable-stir-fry.jpg", description: "Stir-fried vegetables with a sesame oil dressing." }
+                { name: "Grilled Fish Tacos", image: gfishtaco, description: "Delicious tacos with grilled fish." },
+                { name: "Quinoa and Veggies", image: quinoaarveg, description: "Protein-packed quinoa with vegetables." },
+                { name: "Chickpea Salad", image: chickpeasalad, description: "Rich in fiber and nutrients." },
+                { name: "Grilled Veggie Wrap", image: gvegwrap, description: "Low-fat wrap with roasted veggies." }
             ],
             dinner: [
-                { name: "Chickpea Salad", image: "/assets/chickpea-salad.jpg", description: "Chickpeas with cucumbers, tomatoes, and olive oil dressing." },
-                { name: "Lentil Soup", image: "/assets/lentil-soup.jpg", description: "A hearty lentil soup with carrots, celery, and spices." }
+                { name: "Vegetable Soup", image: vegsoup, description: "Warm soup with mixed vegetables." },
+                { name: "Roasted Brussels Sprouts", image: rbrussels, description: "Crispy and delicious." },
+                { name: "Grilled Salmon", image: grilledsalmon, description: "Rich in omega-3 fatty acids." },
+                { name: "Lentil Soup", image: lentilsoup, description: "A hearty lentil dish with spices." }
             ]
         }
     };
@@ -96,7 +148,7 @@ function Diet() {
 
             {/* Dropdown to select a condition */}
             <div className="condition-selector">
-                <label htmlFor="condition">Select Your Condition:</label>
+                <label htmlFor="condition">Select Your Condition:  </label>
                 <select
                     id="condition"
                     value={selectedCondition}
