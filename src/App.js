@@ -6,6 +6,7 @@ import Register from "./pages/Register";
 import Tips from "./pages/Tips";
 import Workouts from "./pages/Workouts";
 import Diet from "./pages/Diet";
+import AboutUs from "./pages/About";
 import Upload from "./pages/upload";
 import Visualization from "./pages/Visualization";
 import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
@@ -24,6 +25,7 @@ function App() {
         <Route path="/Tips" element={<Tips />} />
         <Route path='/Diet' element={<Diet />}/>
         <Route path="/Workouts" element={<Workouts />} />
+        <Route path="/about" element={<AboutUs />} />
         <Route path="/MedTerms" element={<Medterm/>} />
         <Route path="/Visualization" element={<Visualization/>} />
       </Routes>
