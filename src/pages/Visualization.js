@@ -10,6 +10,7 @@ function Visualization() {
     const location = useLocation();
     const { fileName } = location.state || {};
     const [testCategories, setTestCategories] = useState([]);
+    const [calmingMessage, setCalmingMessage] = useState(""); // State for calming message
     const [error, setError] = useState("");
 
     const chartTypeAssignments = [
@@ -24,6 +25,17 @@ function Visualization() {
     ];
 
     useEffect(() => {
+        // Load calming messages from the JSON file
+        import("./calmingmessages.json")
+            .then((data) => {
+                const messages = data.messages;
+                const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+                setCalmingMessage(randomMessage);
+            })
+            .catch((err) => {
+                console.error("Failed to load calming messages:", err);
+            });
+
         if (fileName === "R10931673_SANJANA_U_050623105552.pdf") {
             import("./medical_report_extracted.json")
                 .then((data) => {
@@ -65,6 +77,12 @@ function Visualization() {
 
     return (
         <div style={styles.container}>
+            {calmingMessage && (
+                <div style={styles.calmingMessageContainer}>
+                    <p style={styles.calmingMessage}>{calmingMessage}</p>
+                </div>
+            )}
+
             <h1 style={styles.title}>Medical Test Visualization</h1>
             <p style={styles.description}>
                 File Name: <strong>{fileName || "No file uploaded"}</strong>
@@ -130,6 +148,20 @@ const styles = {
         padding: "20px",
         backgroundColor: "#f9f9f9",
         minHeight: "100vh",
+    },
+    calmingMessageContainer: {
+        width: "100%",
+        textAlign: "center",
+        backgroundColor: "#f5f5f5",
+        padding: "10px",
+        borderRadius: "8px",
+        marginBottom: "20px",
+        boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)",
+    },
+    calmingMessage: {
+        fontSize: "1.2rem",
+        color: "#555",
+        fontStyle: "italic",
     },
     title: {
         fontSize: "2rem",
