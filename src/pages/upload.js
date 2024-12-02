@@ -31,7 +31,9 @@ function Upload() {
             setUploadStatus("File uploaded successfully!");
 
             // Navigate to the Visualization page with the file name
-            navigate("/visualization", { state: { fileName: file.name } });
+            navigate("/visualization", {
+                state: { fileName: file.name },
+            });
         } catch (error) {
             console.error("Upload failed:", error.message);
             setUploadStatus(`Upload failed: ${error.message}`);
