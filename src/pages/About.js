@@ -1,6 +1,10 @@
 import React from 'react';
 import '../styles/AboutUs.css'; // Optional CSS file for styling
 import MedcoLogo from '../assets/logo.png';
+import rn from '../assets/rn.png';
+import g from '../assets/g.png';
+import s from '../assets/s.png';
+import r from '../assets/r.png';
 const AboutUs = () => {
   return (
     <div className="about-us-container">
@@ -37,23 +41,40 @@ const AboutUs = () => {
       <section className="team-section">
         <h2>Meet the Team</h2>
         <p>
-          MedCo is developed by a passionate team of developers and designers dedicated to making health management simple and accessible.
+            MedCo is brought to life by a dedicated team of developers, designers, and healthcare professionals who share a passion for simplifying chronic disease management.
         </p>
         <div className="team-members">
-          <div className="team-member">
-            <h3>Rashmika Nattam</h3>
-          </div>
-          <div className="team-member">
-            <h3>Gunashree Channakeshava</h3>
-          </div>
-          <div className="team-member">
-            <h3>Rohan Karle Sudarshan</h3>
-          </div>
-          <div className="team-member">
-            <h3>Sanjana Uppalike</h3>
-          </div>
+            <div className="team-member">
+                <img src= {rn} alt="Rashmika Nattam" className="team-photo" style={{height: "100px"}}/>
+                <h3>Rashmika<br/> Nattam</h3>
+                <div className="social-links">
+                    <a href="https://github.com/RashmikaN" target="_blank" rel="noopener noreferrer">GitHub</a>
+                </div>
+                </div>
+            <div className="team-member">
+                <img src= {g} alt="Gunashree Channakeshava" className="team-photo" style={{height: "100px"}}/>
+                <h3>Gunashree Channakeshava</h3>
+                <div className="social-links">
+                    <a href="https://github.com/GunashreeC" target="_blank" rel="noopener noreferrer">GitHub</a>
+                </div>
+            </div>
+            <div className="team-member">
+                <img src= {r} alt="Rohan Karle Sudarshan" className="team-photo" style={{height: "100px"}}/>
+                <h3>Rohan Karle Sudarshan</h3>
+                <div className="social-links">
+                    <a href="https://github.com/rohansudarshan1810" target="_blank" rel="noopener noreferrer">GitHub</a>
+                </div>
+            </div>
+            <div className="team-member">
+                <img src= {s} alt="Sanjana Uppalike" className="team-photo" style={{height: "100px"}}/>
+                <h3>Sanjana <br/> Uppalike</h3>
+                <div className="social-links">
+                    <a href="https://github.com/sanjanauppalike" target="_blank" rel="noopener noreferrer">GitHub</a>
+                </div>
+            </div>
         </div>
-      </section>
+        </section>
+
 
       <footer className="about-us-footer">
         <p>
