@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import back from "../assets/back.png";
+import dieticon from "../assets/dieticon.png";
 import "../styles/workoutsanddiets.css";
 
 function Workouts() {
@@ -9,7 +10,7 @@ function Workouts() {
     // Data structure with at least 8 videos for each condition
     const workoutVideos = {
         // Workouts for Heart Condition
-        heartDisease: [
+        HeartDisease: [
             { name: "Walking Exercise", description: "Low-intensity walking for cardiovascular health.", video: "https://www.youtube.com/embed/aKQC07unLr0?si=UiBFR6s-pq1RX7tL" },
             { name: "Gentle Yoga", description: "Basic yoga poses to improve heart health.", video: "https://www.youtube.com/embed/VpW33Celubg" },
             { name: "Low-Impact Cardio", description: "Low-impact exercises suitable for the heart.", video: "https://www.youtube.com/embed/4AObAU-EcYE" },
@@ -20,7 +21,7 @@ function Workouts() {
             { name: "Resistance Band Training", description: "Light resistance exercises to build strength.", video: "https://www.youtube.com/embed/nnkuEOs_ITY?si=iUCakS7pCqtVtzmJ" },
         ],
         // Workouts for thyroid
-        thyroid: [
+        Thyroid: [
             { name: "Yoga for Thyroid", description: "Yoga poses specifically for thyroid health.", video: "https://www.youtube.com/embed/rmNzv9D4QMs?si=VDiWgfDFU6UhfMdl" },
             { name: "Surya Namaskar", description: "Sun salutations to stimulate metabolism.", video: "https://www.youtube.com/embed/AbPufvvYiSw?si=tguPvhKR1LEaOvCQ" },
             { name: "Neck Stretches", description: "Exercises to relax and stretch the neck.", video: "https://www.youtube.com/embed/s-7lyvblFNI?si=583SX61eLAr_AwkA" },
@@ -31,7 +32,7 @@ function Workouts() {
             { name: "Shoulder Stand", description: "Advanced pose for thyroid stimulation.", video: "https://www.youtube.com/embed/SOHsI7XI0mg?si=yfRa_-t0JZgslXWq" },
         ],
         // Workouts for diabetic people
-        diabetes: [
+        Diabetes: [
             { name: "Chair Yoga", description: "Gentle yoga exercises for better blood sugar control.", video: "https://www.youtube.com/embed/-Ts01MC2mIo?si=TLQlP4gtPYhX1tVO" },
             { name: "Walking Exercise", description: "Daily walking routine to manage diabetes.", video: "https://www.youtube.com/embed/YS55RsOK3oM?si=4Xq0l_Qh5VmTbBho" },
             { name: "Leg Raises", description: "Lower body exercises to improve circulation.", video: "https://www.youtube.com/embed/U4L_6JEv9Jg?si=eLNDLVZY7SnDGeEk" },
@@ -42,7 +43,7 @@ function Workouts() {
             { name: "Resistance Training", description: "Strength-building exercises for insulin sensitivity.", video: "https://www.youtube.com/embed/t3kL5gswXAc?si=xRbftzz88YyEtw1i" },
         ],
         // Workouts for cholestrol
-        cholesterol: [
+        Cholesterol: [
             { name: "Cardio for Cholesterol", description: "Heart-pumping cardio exercises.", video: "https://www.youtube.com/embed/dgu_VakBrIc?si=8IKnRzJhzAKzU6T0" },
             { name: "Yoga for Cholesterol", description: "Yoga to help reduce cholesterol levels.", video: "https://www.youtube.com/embed/CfojB8rywBI?si=M6q1H_Oz3M61anN5" },
             { name: "Cycling Indoors", description: "Stationary cycling for a cardiovascular boost.", video: "https://www.youtube.com/embed/4GtsF-TyyHA?si=G87HWmFiKGaS3YOI" },
@@ -60,6 +61,9 @@ function Workouts() {
             <Link to="/Tips" className="back-button">
                 <img src={back} alt="Back" />
             </Link>
+            <Link to="/Diet" className="back-button">
+                <img src={dieticon} alt="Diet Tab" />
+            </Link>
             <h1>Workouts</h1>
             <div className="condition-selector">
                 <label htmlFor="condition">Select Your Condition: </label>
@@ -69,10 +73,10 @@ function Workouts() {
                     onChange={(e) => setSelectedCondition(e.target.value)}
                 >
                     <option value="">-- Choose an Option --</option>
-                    <option value="heartDisease">Heart Disease</option>
-                    <option value="thyroid">Thyroid</option>
-                    <option value="diabetes">Diabetes</option>
-                    <option value="cholesterol">Cholesterol</option>
+                    <option value="HeartDisease">Heart Disease</option>
+                    <option value="Thyroid">Thyroid</option>
+                    <option value="Diabetes">Diabetes</option>
+                    <option value="Cholesterol">Cholesterol</option>
                 </select>
             </div>
 
