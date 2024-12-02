@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import back from '../assets/back.png';
+import exercise from '../assets/exercise.png';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBookOpen } from '@fortawesome/free-solid-svg-icons';
@@ -61,7 +62,7 @@ function Diet() {
 
     // Data for each condition with meals categorized by breakfast, lunch, and dinner
     const foodLists = {
-        heartDisease: {
+        HeartDisease: {
             breakfast: [
                 { name: "Oats with Berries", 
                   image: oatswberries, 
@@ -130,7 +131,7 @@ function Diet() {
                   recipeLink: "https://www.eatingwell.com/recipe/277158/mushroom-tofu-stir-fry/" }
             ]
         },
-        thyroid: {
+        Thyroid: {
             breakfast: [
                 { name: "Greek Yogurt with Nuts", 
                   image: gyogurtswnuts, 
@@ -198,7 +199,7 @@ function Diet() {
                   recipeLink: "https://iowagirleats.com/very-veggie-cauliflower-hash-brown-breakfast-bowl/" }
             ]
         },
-        diabetes: {
+        Diabetes: {
             breakfast: [
                 { name: "Oats with Almond Butter", 
                   image: aboats, 
@@ -266,7 +267,7 @@ function Diet() {
                   recipeLink: "https://www.epicurious.com/recipes/food/views/stir-fried-chinese-greens" }
             ]
         },
-        cholesterol: {
+        Cholesterol: {
             breakfast: [
                 { name: "Oats with Fresh Fruits", 
                   image: oatswfruits, 
@@ -339,10 +340,15 @@ function Diet() {
     return (
         <div>
             <Link to="/Tips" className="back-button" aria-label="Go back to tips">
-                <img src={back} alt="Back" />
+                <img src={back} alt="Tips Tab" />
+            </Link> 
+
+            <Link to="/Workouts" className="back-button" aria-label="Go back to tips">
+                <img src={exercise} alt="Exercise Tab" />
             </Link> 
 
             <h1>Diet Plans</h1>
+
 
             {/* Dropdown to select a condition */}
             <div className="condition-selector">
@@ -355,10 +361,10 @@ function Diet() {
                     onChange={(e) => setSelectedCondition(e.target.value)}
                 >
                     <option value="">-- Choose an Option --</option>
-                    <option value="heartDisease">Heart Disease</option>
-                    <option value="thyroid">Thyroid</option>
-                    <option value="diabetes">Diabetes</option>
-                    <option value="cholesterol">Cholesterol</option>
+                    <option value="HeartDisease">Heart Disease</option>
+                    <option value="Thyroid">Thyroid</option>
+                    <option value="Diabetes">Diabetes</option>
+                    <option value="Cholesterol">Cholesterol</option>
                 </select>
             </div>
             
