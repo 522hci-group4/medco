@@ -45,7 +45,7 @@
   
   .team-member {
     flex: 1;
-    background-color: #e0f2f1;
+    background-color: #9ed8d5;
     padding: 15px;
     border-radius: 8px;
     text-align: center;
@@ -61,12 +61,19 @@
     margin-top: 30px;
   }
   
-  .about-us-footer a {
-    color: #00796b;
+  .social-links a {
+    color: #fff; /* Change this to match your theme (e.g., dark green) */
     text-decoration: none;
+    font-weight: bold; /* Make links stand out */
+    border: 1px solid #004d40; /* Optional: Add a subtle border */
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: #004d40;
+    transition: background-color 0.3s, color 0.3s; /* Smooth hover effects */
   }
   
-  .about-us-footer a:hover {
-    text-decoration: underline;
+  .social-links a:hover {
+    background-color: #9ed8d5; /* Add a background color on hover */
+    color: #004d40;; /* Change text color on hover */
   }
   
