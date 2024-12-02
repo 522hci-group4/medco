@@ -64,6 +64,14 @@ p {
 
 
 /* Food*/
+.food-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Alignment of the button */
+  min-height: 150px; /* Adjust this to fit the tallest food item content */
+}
+
 .condition-selector label{
   margin-left: 2%;
 }
@@ -109,8 +117,47 @@ p {
 }
 
 .food-item img {
-  width: 150px; /* Set the width of all images */
-  height: 150px; /* Set the height of all images */
-  border-radius: 8px; /* Optional: Add rounded corners */
-  object-fit: fill; /* Ensures the image fills the space without distortion */
+  width: 150px; 
+  height: 150px;
+  border-radius: 8px;
+  object-fit: fill; 
+}
+
+.food-item {
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.food-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+
+/* View Recipe link */
+.recipe-link {
+  display: inline-block;
+  margin-top: 0.6rem;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #fff;
+  background-color: #1fb1ae;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  align-self: center;
+}
+
+.recipe-link:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+  transform: scale(1.05); /* Slight zoom effect */
+}
+
+/* No recipe placeholder */
+.no-recipe {
+  font-size: 0.9rem;
+  color: #999; /* Light gray */
+  margin-top: 0.6rem;
+  font-style: italic;
 }
