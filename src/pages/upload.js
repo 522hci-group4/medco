@@ -124,10 +124,11 @@ const styles = {
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        justifyContent: "center",
+        justifyContent: "flex-start", // Aligns items towards the top
         height: "100vh",
         backgroundColor: "#e0f7f7",
         padding: "20px",
+        paddingTop: "150px", // Slightly more padding to center it vertically
     },
     header: {
         width: "100%",
@@ -162,5 +163,6 @@ const styles = {
         display: "none",
     },
 };
+
 
 export default Upload;
