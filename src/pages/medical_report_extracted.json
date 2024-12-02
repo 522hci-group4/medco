@@ -1,0 +1,267 @@
+{
+    "Patient Info": {
+        "Name": "MS SANJANA U",
+        "Age": 23,
+        "Gender": "F",
+        "Visit ID": "R10931673",
+        "Contact No.": "9480776909",
+        "Referring Doctor": "DR SELF",
+        "Report Status": "Final",
+        "Registered On": "04/06/2023 07:25",
+        "Reported On": "05/06/2023 09:55",
+        "Sample Source": "Walk-in, No.54, Anand Tower, Bowring Hospital Road, Shivajinagar, Bangalore-560001."
+    },
+    "Test Results": {
+        "HAEMATOLOGY": [
+            {
+                "Test Name": "Haemoglobin Percentage",
+                "Result": "12.1 g/dl",
+                "Reference Range": "11.5 - 16 g/dl"
+            },
+            {
+                "Test Name": "Packed Cell Volume",
+                "Result": "37.2%",
+                "Reference Range": "34 - 48%"
+            },
+            {
+                "Test Name": "Total WBC Count",
+                "Result": "6790 /Cmm",
+                "Reference Range": "4000 - 11000 /Cmm"
+            },
+            {
+                "Test Name": "Neutrophils",
+                "Result": "49.7%",
+                "Reference Range": "40 - 75%"
+            },
+            {
+                "Test Name": "Lymphocytes",
+                "Result": "38.3%",
+                "Reference Range": "20 - 45%"
+            },
+            {
+                "Test Name": "Eosinophils",
+                "Result": "2.8%",
+                "Reference Range": "1 - 6%"
+            },
+            {
+                "Test Name": "Monocytes",
+                "Result": "8.8%",
+                "Reference Range": "1 - 10%"
+            },
+            {
+                "Test Name": "Basophils",
+                "Result": "0.4%",
+                "Reference Range": "0 - 1%"
+            },
+            {
+                "Test Name": "Red Blood Cell Count",
+                "Result": "4.44 million/cmm",
+                "Reference Range": "3.7 - 5.6 million/cmm"
+            },
+            {
+                "Test Name": "Mean Corpuscular Volume",
+                "Result": "83.8 fl",
+                "Reference Range": "75 - 95 fl"
+            },
+            {
+                "Test Name": "Mean Corpuscular Hemoglobin",
+                "Result": "27.3 pg",
+                "Reference Range": "26 - 32 pg"
+            },
+            {
+                "Test Name": "Mean Corpuscular Hemoglobin Concentration",
+                "Result": "32.5 g/dl",
+                "Reference Range": "30 - 35 g/dl"
+            },
+            {
+                "Test Name": "Platelet Count",
+                "Result": "410000 /Cmm",
+                "Reference Range": "140000 - 440000 /Cmm"
+            },
+            {
+                "Test Name": "Mean Platelet Volume",
+                "Result": "9.5 fl",
+                "Reference Range": "9 - 12 fl"
+            },
+            {
+                "Test Name": "Red Cell Distribution Width",
+                "Result": "12.7%",
+                "Reference Range": "11 - 16%"
+            }
+        ],
+        "BIOCHEMISTRY": [
+            {
+                "Test Name": "Total Cholesterol",
+                "Result": "157 mg/dl",
+                "Reference Range": "< 200 mg/dl - Desirable"
+            },
+            {
+                "Test Name": "Triglycerides",
+                "Result": "74 mg/dl",
+                "Reference Range": "< 150 mg/dl - Normal"
+            },
+            {
+                "Test Name": "HDL Cholesterol",
+                "Result": "53 mg/dl",
+                "Reference Range": "> 60 mg/dl - Desirable"
+            },
+            {
+                "Test Name": "LDL Cholesterol",
+                "Result": "93 mg/dl",
+                "Reference Range": "< 100 mg/dl - Optimal"
+            },
+            {
+                "Test Name": "Non-HDL Cholesterol",
+                "Result": "103 mg/dl",
+                "Reference Range": null
+            },
+            {
+                "Test Name": "Total: HDL Ratio",
+                "Result": "2.95",
+                "Reference Range": "< 4.5"
+            },
+            {
+                "Test Name": "LDL: HDL Ratio",
+                "Result": "1.76",
+                "Reference Range": "< 3.5"
+            }
+        ],
+        "LIVER FUNCTION TESTS": [
+            {
+                "Test Name": "Total Proteins",
+                "Result": "7.90 g/dl",
+                "Reference Range": "5.7 - 8.2 g/dl"
+            },
+            {
+                "Test Name": "Albumin",
+                "Result": "4.73 g/dl",
+                "Reference Range": "3.5 - 5.2 g/dl"
+            },
+            {
+                "Test Name": "Globulin",
+                "Result": "3.17 g/dl",
+                "Reference Range": "2.0 - 3.0 g/dl"
+            },
+            {
+                "Test Name": "Albumin: Globulin Ratio",
+                "Result": "1.49",
+                "Reference Range": "1.5 - 2.5"
+            },
+            {
+                "Test Name": "Alkaline Phosphatase",
+                "Result": "76 U/L",
+                "Reference Range": "35 - 104 U/L"
+            },
+            {
+                "Test Name": "Total Bilirubin",
+                "Result": "0.49 mg/dl",
+                "Reference Range": "0.3 - 1.2 mg/dl"
+            },
+            {
+                "Test Name": "Direct Bilirubin",
+                "Result": "0.20 mg/dl",
+                "Reference Range": "0 - 0.3 mg/dl"
+            },
+            {
+                "Test Name": "Indirect Bilirubin",
+                "Result": "0.29 mg/dl",
+                "Reference Range": "0 - 0.8 mg/dl"
+            },
+            {
+                "Test Name": "AST (SGOT)",
+                "Result": "25 U/L",
+                "Reference Range": "0 - 34 U/L"
+            },
+            {
+                "Test Name": "ALT (SGPT)",
+                "Result": "24 U/L",
+                "Reference Range": "10 - 49 U/L"
+            },
+            {
+                "Test Name": "Gamma GT",
+                "Result": "15 U/L",
+                "Reference Range": "12 - 43 U/L"
+            }
+        ],
+        "RENAL PROFILE": [
+            {
+                "Test Name": "Blood Urea",
+                "Result": "19.3 mg/dl",
+                "Reference Range": "< 50 mg/dl"
+            },
+            {
+                "Test Name": "Serum Creatinine",
+                "Result": "0.55 mg/dl",
+                "Reference Range": "0.5 - 1.1 mg/dl"
+            },
+            {
+                "Test Name": "Blood Urea Nitrogen",
+                "Result": "9.0 mg/dl",
+                "Reference Range": "9 - 23 mg/dl"
+            },
+            {
+                "Test Name": "Uric Acid",
+                "Result": "5.9 mg/dl",
+                "Reference Range": "2.6 - 6.0 mg/dl"
+            }
+        ],
+        "SERUM ELECTROLYTES": [
+            {
+                "Test Name": "Sodium",
+                "Result": "142 mmol/L",
+                "Reference Range": "136 - 145 mmol/L"
+            },
+            {
+                "Test Name": "Potassium",
+                "Result": "4.04 mmol/L",
+                "Reference Range": "3.5 - 5.1 mmol/L"
+            },
+            {
+                "Test Name": "Chlorides",
+                "Result": "107 mmol/L",
+                "Reference Range": "98 - 107 mmol/L"
+            }
+        ],
+        "GLYCOSYLATED HEMOGLOBIN (HbA1c)": [
+            {
+                "Test Name": "HbA1c",
+                "Result": "5.30%",
+                "Reference Range": "\u2264 5.6% - Normal"
+            },
+            {
+                "Test Name": "Estimated Average Glucose",
+                "Result": "105.4 mg/dl",
+                "Reference Range": null
+            }
+        ],
+        "THYROID FUNCTION TESTS": [
+            {
+                "Test Name": "TSH",
+                "Result": "7.17 mcIU/mL",
+                "Reference Range": "0.4 - 4.2 mcIU/mL"
+            },
+            {
+                "Test Name": "Free T4 (Thyroxine)",
+                "Result": "1.12 ng/dl",
+                "Reference Range": "0.89 - 1.76 ng/dl"
+            },
+            {
+                "Test Name": "Free T3 (Triiodothyronine)",
+                "Result": "1.15 ng/ml",
+                "Reference Range": "0.6 - 1.81 ng/ml"
+            }
+        ],
+        "VITAMINS": [
+            {
+                "Test Name": "Vitamin D (25-OH)",
+                "Result": "76.70 ng/ml",
+                "Reference Range": "> 30 ng/ml - Optimal"
+            },
+            {
+                "Test Name": "Active Vitamin B12",
+                "Result": "52.40 pmol/L",
+                "Reference Range": "25.1 - 165 pmol/L"
+            }
+        ]
+    }
+}
