@@ -2,13 +2,11 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { supabase } from "./supabaseClient"; // Make sure this file is correctly set up
 
-
 function Upload() {
     const navigate = useNavigate();
     const [uploadStatus, setUploadStatus] = useState("");
     const [userName, setUserName] = useState("");
 
-    // Handle file upload
     const handleFileUpload = async (event) => {
         const file = event.target.files[0];
 
@@ -17,7 +15,6 @@ function Upload() {
             return;
         }
 
-        // Check if the user is logged in
         const {
             data: { session },
             error: sessionError,
@@ -34,17 +31,16 @@ function Upload() {
             return;
         }
 
-        const userId = session.user.id; // Get the user's unique ID
+        const userId = session.user.id;
 
         setUploadStatus("Uploading...");
 
         try {
-            // Upload file to Supabase Storage under a user-specific folder
             const { data, error } = await supabase.storage
-                .from("pdf-uploads") // Replace with your Supabase bucket name
+                .from("pdf-uploads")
                 .upload(`uploads/${userId}/${file.name}`, file, {
-                    cacheControl: "3600", // Optional cache control
-                    upsert: false, // Optional: set to false to avoid overwriting files
+                    cacheControl: "3600",
+                    upsert: false,
                 });
 
             if (error) {
@@ -54,15 +50,17 @@ function Upload() {
             console.log("File uploaded successfully:", data);
             setUploadStatus("File uploaded successfully!");
 
-            // Redirect to the visualization page
-            navigate("/visualization");
+            navigate("/visualization", {
+                state: {
+                    fileName: file.name,
+                },
+            });
         } catch (error) {
             console.error("Upload failed:", error);
             setUploadStatus(`Upload failed: ${error.message}`);
         }
     };
 
-    // Fetch the user's name from the logged-in user's metadata
     useEffect(() => {
         const fetchUser = async () => {
             const {
@@ -85,7 +83,6 @@ function Upload() {
 
         fetchUser();
 
-        // Listen to authentication changes
         const { data: subscription } = supabase.auth.onAuthStateChange((event, session) => {
             const name = session?.user?.user_metadata?.full_name || "User";
             setUserName(name);
@@ -93,7 +90,7 @@ function Upload() {
 
         return () => {
             if (subscription && subscription.unsubscribe) {
-                subscription.unsubscribe(); // Correctly unsubscribe
+                subscription.unsubscribe();
             }
         };
     }, []);
@@ -122,17 +119,16 @@ function Upload() {
     );
 }
 
-
-// Inline Styles
 const styles = {
     container: {
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        justifyContent: "center",
+        justifyContent: "flex-start", // Aligns items towards the top
         height: "100vh",
-        backgroundColor: "#e0f7f7", // Background color matching your design
-        padding: "20px",  // Added padding to avoid elements being stuck to the edges
+        backgroundColor: "#e0f7f7",
+        padding: "20px",
+        paddingTop: "150px", // Slightly more padding to center it vertically
     },
     header: {
         width: "100%",
@@ -143,12 +139,12 @@ const styles = {
     },
     greeting: {
         fontSize: "1.2rem",
-        color: "#008080", // Teal color for the greeting
+        color: "#008080",
         fontWeight: "bold",
     },
     title: {
         fontSize: "2rem",
-        color: "#008080", // Teal color for the title
+        color: "#008080",
         marginBottom: "20px",
     },
     uploadSection: {
@@ -164,8 +160,9 @@ const styles = {
         cursor: "pointer",
     },
     uploadInput: {
-        display: "none", // Hide the default file input
+        display: "none",
     },
 };
+
 
 export default Upload;
