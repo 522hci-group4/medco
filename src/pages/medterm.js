@@ -1,286 +1,265 @@
 import React, { useState, useEffect } from "react";
 
-function Medterm() {
+function MedicalTests() {
   const [terms, setTerms] = useState([]);
-  const [questions, setQuestions] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [testsPerPage] = useState(3); // Set to 3 cards per page
   const [searchQuery, setSearchQuery] = useState("");
   const [filteredQuestions, setFilteredQuestions] = useState([]);
-  const [selectedTerm, setSelectedTerm] = useState(null); // For analogy card
-  const [selectedQuestion, setSelectedQuestion] = useState(null); // For answer card
+  const [expandedTest, setExpandedTest] = useState(null); // To track expanded test
 
   useEffect(() => {
-    // Mock fetch from JSON file
-    fetch("/terms.json")
-      .then((response) => response.json())
-      .then((data) => {
-        setTerms(data.terms);
-        setQuestions(data.questions);
-      });
+    // Fetch terms from JSON
+    fetch("/term3.json")
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Failed to fetch terms");
+        }
+        return response.json();
+      })
+      .then((data) => setTerms(data))
+      .catch((error) => console.error("Error fetching terms:", error));
   }, []);
 
   const handleSearchInput = (query) => {
     setSearchQuery(query);
-    const results = questions.filter((q) =>
-      q.question.toLowerCase().includes(query.toLowerCase())
-    );
+    if (query.trim() === "") {
+      setFilteredQuestions([]);
+      return;
+    }
+    const results = terms
+      .filter((term) =>
+        term.test_name.toLowerCase().includes(query.toLowerCase())
+      )
+      .map((term) => ({
+        question: `What is ${term.test_name}?`,
+        answer: term.description,
+      }));
     setFilteredQuestions(results);
   };
 
-  const handleTermClick = (term) => {
-    setSelectedTerm(term); // Show analogy card
+  const handleNextPage = () => {
+    if (currentPage < Math.ceil(filteredTests.length / testsPerPage)) {
+      setCurrentPage(currentPage + 1);
+    }
   };
 
-  const handleSuggestionClick = (question) => {
-    setSelectedQuestion(question); // Show answer card
-    setSearchQuery(""); // Clear the search query after selection
-    setFilteredQuestions([]); // Clear suggestions
+  const handlePreviousPage = () => {
+    if (currentPage > 1) {
+      setCurrentPage(currentPage - 1);
+    }
   };
 
-  const closeAnalogyCard = () => {
-    setSelectedTerm(null); // Close analogy card
+  const toggleExplanation = (testName) => {
+    setExpandedTest(expandedTest === testName ? null : testName); // Toggle expansion
   };
 
-  const closeAnswerCard = () => {
-    setSelectedQuestion(null); // Close answer card
-  };
+  const filteredTests = terms.filter(
+    (term) => term.status === "High" || term.status === "Low"
+  );
+  const indexOfLastTest = currentPage * testsPerPage;
+  const indexOfFirstTest = indexOfLastTest - testsPerPage;
+  const currentTests = filteredTests.slice(indexOfFirstTest, indexOfLastTest);
 
   return (
     <div style={styles.container}>
-      <section style={styles.section}>
-        <h1 style={styles.heading}>Explore Medical Terms</h1>
-        <div style={styles.termsContainer}>
-          {terms.map((term, index) => (
-            <div
-              key={index}
-              style={{
-                ...styles.termCard,
-                background: term.isAbnormal
-                  ? "linear-gradient(135deg, #ffe4e6, #f87171)"
-                  : "linear-gradient(135deg, #e6f7f9, #38b2ac)",
-                borderColor: term.isAbnormal ? "#f87171" : "#38b2ac"
-              }}
-              onClick={() => handleTermClick(term)}
-            >
-              <img
-                src={term.image}
-                alt={`${term.name} icon`}
-                style={styles.cardImage}
-              />
-              <div>
-                <h3 style={styles.termName}>{term.name}</h3>
-                <p style={styles.termDescription}>{term.description}</p>
-                <p style={styles.reportText}>
-                  <strong>Your report reads:</strong> {term.reportValue}
-                </p>
-                <p
-                  style={{
-                    ...styles.statusText,
-                    color: term.isAbnormal ? "#e53e3e" : "#2f855a"
-                  }}
-                >
-                  {term.isAbnormal ? "Needs Attention" : "Normal"}
-                </p>
+
+      {/* Important Tests Window */}
+      <section style={styles.testsWindow}>
+        <h2 style={styles.sectionTitle}>🚨 Tests that require your attention</h2>
+        {currentTests.map((term, index) => (
+          <div
+            key={index}
+            style={styles.card}
+            onClick={() => toggleExplanation(term.test_name)}
+          >
+            <h3 style={styles.cardTitle}>
+              {term.test_name} | <span style={styles.cardStatus}>{term.status}</span> |{" "}
+              <span style={styles.cardValue}>{term.value} {term.unit}</span>
+            </h3>
+            <p style={styles.cardDescription}>{term.description}</p>
+            {expandedTest === term.test_name && (
+              <div style={styles.expandedContent}>
+                <p style={styles.cardExplanation}>{term.explanation}</p>
               </div>
-            </div>
-          ))}
+            )}
+          </div>
+        ))}
+        <div style={styles.pagination}>
+          <button
+            onClick={handlePreviousPage}
+            disabled={currentPage === 1}
+            style={styles.paginationButton}
+          >
+            Previous
+          </button>
+          <span style={styles.pageNumber}>
+            Page {currentPage} of {Math.ceil(filteredTests.length / testsPerPage)}
+          </span>
+          <button
+            onClick={handleNextPage}
+            disabled={currentPage === Math.ceil(filteredTests.length / testsPerPage)}
+            style={styles.paginationButton}
+          >
+            Next
+          </button>
         </div>
       </section>
 
-      <section style={styles.section}>
-        <h1 style={styles.heading}>Search Medical Questions</h1>
-        <div style={styles.searchContainer}>
-          <input
-            type="text"
-            placeholder="Search for questions..."
-            value={searchQuery}
-            onChange={(e) => handleSearchInput(e.target.value)}
-            style={styles.searchInput}
-            aria-label="Search medical questions"
-          />
-          {filteredQuestions.length > 0 && (
-            <div style={styles.suggestionsContainer}>
-              {filteredQuestions.map((q, index) => (
-                <div
-                  key={index}
-                  style={styles.suggestion}
-                  onClick={() => handleSuggestionClick(q)}
-                >
-                  {q.question}
-                </div>
-              ))}
-            </div>
-          )}
-        </div>
-      </section>
-
-      {selectedTerm && (
-        <div style={styles.analogyOverlay}>
-          <div style={styles.analogyCard}>
-            <h2 style={styles.analogyHeading}>{selectedTerm.name}</h2>
-            <p style={styles.analogyText}>{selectedTerm.explanation}</p>
-            <button onClick={closeAnalogyCard} style={styles.closeButton}>
-              Close
-            </button>
+      {/* Search Bar */}
+      <div style={styles.searchContainer}>
+        <h2 style={styles.searchTitle}>Or start typing to search for other terms ...</h2>
+        <input
+          type="text"
+          placeholder="Search for tests..."
+          value={searchQuery}
+          onChange={(e) => handleSearchInput(e.target.value)}
+          style={styles.searchInput}
+        />
+        {filteredQuestions.length > 0 && (
+          <div style={styles.questionsList}>
+            {filteredQuestions.map((q, index) => (
+              <div key={index} style={styles.questionCard}>
+                <strong>{q.question}</strong>
+                <p>{q.answer}</p>
+              </div>
+            ))}
           </div>
-        </div>
-      )}
-
-      {selectedQuestion && (
-        <div style={styles.answerOverlay}>
-          <div style={styles.answerCard}>
-            <h2 style={styles.answerHeading}>Answer</h2>
-            <p style={styles.answerText}>{selectedQuestion.answer}</p>
-            <button onClick={closeAnswerCard} style={styles.closeButton}>
-              Close
-            </button>
-          </div>
-        </div>
-      )}
+        )}
+      </div>
     </div>
   );
 }
 
 const styles = {
   container: {
-    fontFamily: "'Roboto', Arial, sans-serif",
-    backgroundColor: "#f9fafb",
+    fontFamily: "'Roboto', sans-serif",
+    padding: "20px",
+    backgroundColor: "#f4f8fa",
     minHeight: "100vh",
-    padding: "20px"
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
   },
-  section: {
-    marginBottom: "40px",
-    textAlign: "center"
+  header: {
+    textAlign: "center",
+    marginBottom: "20px",
+    backgroundColor: "#2c7a7b",
+    color: "#fff",
+    padding: "20px",
+    borderRadius: "8px",
+    width: "100%",
+    maxWidth: "800px",
   },
   heading: {
     fontSize: "32px",
-    fontWeight: "bold",
-    color: "#2d3748",
-    marginBottom: "20px"
+    margin: 0,
   },
-  termsContainer: {
-    display: "grid",
-    gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
-    gap: "20px",
-    padding: "10px"
+  subheading: {
+    fontSize: "16px",
+    marginTop: "10px",
   },
-  termCard: {
+  testsWindow: {
+    backgroundColor: "#fff",
     padding: "20px",
-    borderRadius: "12px",
-    border: "2px solid",
-    boxShadow: "0 6px 12px rgba(0, 0, 0, 0.1)",
-    cursor: "pointer",
+    borderRadius: "8px",
+    boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)",
+    marginBottom: "20px",
+    width: "100%",
+    maxWidth: "800px",
     textAlign: "center",
-    overflow: "hidden"
   },
-  cardImage: {
-    width: "60px",
-    height: "60px",
+  sectionTitle: {
+    fontSize: "24px",
+    marginBottom: "20px",
+    color: "#2d3748",
+  },
+  card: {
+    padding: "10px",
     marginBottom: "10px",
-    borderRadius: "50%"
+    backgroundColor: "#f8f9fa",
+    borderRadius: "5px",
+    boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.1)",
+    textAlign: "left",
+    cursor: "pointer",
+    transition: "transform 0.2s ease, box-shadow 0.2s ease",
+  },
+  cardTitle: {
+    fontSize: "16px",
+    fontWeight: "bold",
+    marginBottom: "5px",
+    color: "#2d3748",
+  },
+  cardDescription: {
+    fontSize: "14px",
+    color: "#718096",
+  },
+  cardStatus: {
+    color: "#e53e3e",
+    fontWeight: "bold",
+  },
+  cardValue: {
+    color: "#4a5568",
+  },
+  expandedContent: {
+    marginTop: "10px",
+    padding: "10px",
+    backgroundColor: "#e0f7f7",
+    borderRadius: "5px",
+  },
+  cardExplanation: {
+    fontSize: "14px",
+    color: "#4a5568",
+  },
+  pagination: {
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+    marginTop: "20px",
+  },
+  paginationButton: {
+    padding: "10px 20px",
+    borderRadius: "8px",
+    backgroundColor: "#2c7a7b",
+    color: "#fff",
+    border: "none",
+    cursor: "pointer",
+  },
+  pageNumber: {
+    fontSize: "16px",
+    color: "#2d3748",
   },
   searchContainer: {
-    position: "relative",
+    marginTop: "20px",
     width: "100%",
-    maxWidth: "400px",
-    margin: "0 auto",
-    textAlign: "left"
+    maxWidth: "800px",
+    textAlign: "center",
+  },
+  searchTitle: {
+    fontSize: "20px",
+    marginBottom: "10px",
+    color: "#2d3748",
   },
   searchInput: {
     width: "100%",
+    maxWidth: "500px",
     padding: "12px",
-    borderRadius: "25px",
+    borderRadius: "8px",
     border: "1px solid #cbd5e0",
-    outline: "none",
-    fontSize: "16px"
-  },
-  suggestionsContainer: {
-    position: "absolute",
-    top: "100%",
-    left: "0",
-    right: "0",
-    backgroundColor: "#ffffff",
-    boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)",
-    borderRadius: "8px",
-    zIndex: "10",
-    maxHeight: "200px",
-    overflowY: "auto"
-  },
-  suggestion: {
-    padding: "10px 15px",
-    cursor: "pointer",
-    borderBottom: "1px solid #e2e8f0",
-    transition: "background-color 0.2s ease",
-    ":hover": {
-      backgroundColor: "#edf2f7"
-    }
-  },
-  analogyOverlay: {
-    position: "fixed",
-    top: "0",
-    left: "0",
-    width: "100%",
-    height: "100%",
-    backgroundColor: "rgba(0, 0, 0, 0.5)",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    zIndex: "10"
-  },
-  analogyCard: {
-    backgroundColor: "#ffffff",
-    padding: "30px",
-    borderRadius: "12px",
-    boxShadow: "0 8px 16px rgba(0, 0, 0, 0.2)",
-    maxWidth: "500px",
-    textAlign: "center"
-  },
-  analogyHeading: {
-    fontSize: "24px",
-    fontWeight: "bold",
-    marginBottom: "20px"
-  },
-  analogyText: {
     fontSize: "16px",
-    marginBottom: "20px"
+    boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.1)",
   },
-  closeButton: {
-    padding: "10px 20px",
-    backgroundColor: "#38b2ac",
-    color: "#fff",
+  questionsList: {
+    marginTop: "20px",
+    textAlign: "left",
+  },
+  questionCard: {
+    backgroundColor: "#fff",
+    padding: "10px",
+    marginBottom: "10px",
     borderRadius: "8px",
-    border: "none",
-    fontWeight: "bold",
-    cursor: "pointer"
+    boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.1)",
   },
-  answerOverlay: {
-    position: "fixed",
-    top: "0",
-    left: "0",
-    width: "100%",
-    height: "100%",
-    backgroundColor: "rgba(0, 0, 0, 0.5)",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    zIndex: "10"
-  },
-  answerCard: {
-    backgroundColor: "#ffffff",
-    padding: "30px",
-    borderRadius: "12px",
-    boxShadow: "0 8px 16px rgba(0, 0, 0, 0.2)",
-    maxWidth: "500px",
-    textAlign: "center"
-  },
-  answerHeading: {
-    fontSize: "24px",
-    fontWeight: "bold",
-    marginBottom: "20px"
-  },
-  answerText: {
-    fontSize: "16px",
-    marginBottom: "20px"
-  }
 };
 
-export default Medterm;
+export default MedicalTests;

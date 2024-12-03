@@ -1,0 +1,51 @@
+{
+    "terms": [
+      {
+        "name": "Blood Components",
+        "items": [
+          {
+            "name": "Hemoglobin",
+            "description": "The protein in red blood cells that carries oxygen.",
+            "isAbnormal": false,
+            "reportValue": "Normal",
+            "explanation": "Your hemoglobin level is within the normal range, indicating proper oxygen transport in your body.",
+            "funFact": "Did you know? Hemoglobin is like the delivery truck of your body, ensuring oxygen gets to where it's needed!",
+            "details": "If hemoglobin levels drop, it can lead to anemia, making you feel tired or weak."
+          },
+          {
+            "name": "White Blood Cells (WBC)",
+            "description": "Cells that help fight infections and protect against diseases.",
+            "isAbnormal": true,
+            "reportValue": "High",
+            "explanation": "A high WBC count might indicate an infection or inflammation in your body.",
+            "funFact": "Did you know? White blood cells are like your body's soldiers, always on guard to fight off invaders!",
+            "details": "Consult a doctor if WBC levels remain high for a prolonged period."
+          }
+        ]
+      },
+      {
+        "name": "Hormones",
+        "items": [
+          {
+            "name": "TSH (Thyroid-Stimulating Hormone)",
+            "description": "Helps regulate the production of thyroid hormones.",
+            "isAbnormal": true,
+            "reportValue": "High",
+            "explanation": "Your TSH level is high, which could indicate an underactive thyroid (hypothyroidism).",
+            "funFact": "Did you know? TSH is like the 'manager' of the thyroid factory, giving instructions to keep production on track!",
+            "details": "You might feel tired or gain weight. Consult a healthcare professional for further evaluation."
+          },
+          {
+            "name": "Cortisol",
+            "description": "A hormone released in response to stress.",
+            "isAbnormal": false,
+            "reportValue": "Normal",
+            "explanation": "Your cortisol level is within the normal range, indicating a healthy stress response.",
+            "funFact": "Did you know? Cortisol is sometimes called the 'stress hormone' because it helps your body manage stress effectively!",
+            "details": "If cortisol levels are too high for too long, it can lead to issues like anxiety or weight gain."
+          }
+        ]
+      }
+    ]
+  }
+  
