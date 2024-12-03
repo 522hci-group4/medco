@@ -1,0 +1,338 @@
+[
+    {
+        "test_name": "PACKED CELL VOLUME",
+        "value": "37.2",
+        "unit": "%",
+        "ref_range": "34 - 48",
+        "status": "Normal",
+        "description": "The percentage of red blood cells in the blood.",
+        "explanation": "Think of it as the blood's fuel efficiency: how much space red blood cells take up compared to everything else."
+    },
+    {
+        "test_name": "TOTAL WBC COUNT",
+        "value": "6790",
+        "unit": "/Cmm",
+        "ref_range": "4000 - 11000",
+        "status": "Normal",
+        "description": "The total number of white blood cells in the blood.",
+        "explanation": "White blood cells are the soldiers of the body, fighting infections and protecting against diseases."
+    },
+    {
+        "test_name": "Neutrophils",
+        "value": "49.7",
+        "unit": "%",
+        "ref_range": "40 - 75",
+        "status": "Normal",
+        "description": "A type of white blood cell that fights bacterial infections.",
+        "explanation": "Neutrophils are like rapid-response firefighters, tackling bacterial infections quickly."
+    },
+    {
+        "test_name": "Lymphocytes",
+        "value": "38.3",
+        "unit": "%",
+        "ref_range": "20 - 45",
+        "status": "Normal",
+        "description": "White blood cells that are part of the immune system.",
+        "explanation": "Think of lymphocytes as detectives, identifying and neutralizing specific threats."
+    },
+    {
+        "test_name": "Eosinophils",
+        "value": "2.8",
+        "unit": "%",
+        "ref_range": "1 - 6",
+        "status": "Normal",
+        "description": "White blood cells involved in allergic reactions and fighting parasites.",
+        "explanation": "Eosinophils are like allergy alert sensors, reacting to invaders like parasites and allergens."
+    },
+    {
+        "test_name": "Monocytes",
+        "value": "8.8",
+        "unit": "%",
+        "ref_range": "1 - 10",
+        "status": "Normal",
+        "description": "White blood cells that clean up dead cells and support immune responses.",
+        "explanation": "Monocytes are the cleanup crew, removing debris and preparing for healing."
+    },
+    {
+        "test_name": "Basophils",
+        "value": "0.4",
+        "unit": "%",
+        "ref_range": "0 - 1",
+        "status": "Normal",
+        "description": "White blood cells involved in inflammatory responses.",
+        "explanation": "Basophils are like alarm systems, triggering the body’s defense mechanisms during allergic reactions."
+    },
+    {
+        "test_name": "RED BLOOD CELL COUNT",
+        "value": "4.44",
+        "unit": "mill/cmm",
+        "ref_range": "3.7 - 5.6",
+        "status": "Normal",
+        "description": "The number of red blood cells in the blood.",
+        "explanation": "Red blood cells are like oxygen delivery trucks, carrying oxygen to all parts of the body."
+    },
+    
+    {
+            "test_name": "MEAN CORPUSCULAR VOLUME",
+            "value": "83.8",
+            "unit": "fl",
+            "ref_range": "75 - 95",
+            "status": "Normal",
+            "description": "The average size of red blood cells.",
+            "explanation": "Think of this as the size of delivery trucks carrying oxygen. If the trucks are too big or too small, it might affect their efficiency."
+        },
+        {
+            "test_name": "MEAN CORPUSCULAR Hb",
+            "value": "32.5",
+            "unit": "g/dl",
+            "ref_range": "30 - 35",
+            "status": "Normal",
+            "description": "The average amount of hemoglobin per red blood cell.",
+            "explanation": "This is like checking how much cargo (oxygen) each delivery truck can carry."
+        },
+        {
+            "test_name": "PLATELET COUNT",
+            "value": "410000",
+            "unit": "/Cmm",
+            "ref_range": "140000 - 440000",
+            "status": "Normal",
+            "description": "The total number of platelets in the blood.",
+            "explanation": "Platelets are like repair workers who help patch up leaks (stop bleeding) in your system."
+        },
+        {
+            "test_name": "MEAN PLATELET VOLUME",
+            "value": "9.5",
+            "unit": "fl",
+            "ref_range": "9 - 12",
+            "status": "Normal",
+            "description": "The average size of platelets.",
+            "explanation": "This measures how equipped the repair workers are to handle leaks and damages."
+        },
+        {
+            "test_name": "RED CELL DISTRIBUTION WIDTH",
+            "value": "12.7",
+            "unit": "%",
+            "ref_range": "11 - 16",
+            "status": "Normal",
+            "description": "The variation in the size of red blood cells.",
+            "explanation": "Think of this as the consistency in size of delivery trucks. Too much variation might indicate problems in their production."
+        },
+        {
+            "test_name": "TOTAL CHOLESTEROL",
+            "value": "157",
+            "unit": "mg/dl",
+            "ref_range": "170 - 199",
+            "status": "Low",
+            "description": "The total amount of cholesterol in the blood.",
+            "explanation": "Cholesterol is like grease for your engine. Too much or too little can cause performance issues."
+        },
+        {
+            "test_name": "TRIGLYCERIDES (FASTING)",
+            "value": "74",
+            "unit": "mg/dl",
+            "ref_range": "150 - 199",
+            "status": "Low",
+            "description": "The level of fat in the blood after fasting.",
+            "explanation": "Think of this as your body's energy reserves. Too much can clog systems, too little might indicate insufficient reserves."
+        },
+        {
+            "test_name": "HDL CHOLESTEROL",
+            "value": "53",
+            "unit": "mg/dl",
+            "ref_range": "Low (undesirable, high risk): < 40 mg/dL High (desirable, low risk): = 60 mg/dL",
+            "status": "Normal",
+            "description": "The 'good' cholesterol that removes bad cholesterol.",
+            "explanation": "HDL acts like a cleanup crew, clearing out bad substances from your body’s systems."
+        },
+        {
+            "test_name": "LDL CHOLESTEROL",
+            "value": "93",
+            "unit": "mg/dl",
+            "ref_range": "100 - 129",
+            "status": "Low",
+            "description": "The 'bad' cholesterol that can clog arteries.",
+            "explanation": "LDL is like sludge that can build up in pipes and block flow if there’s too much."
+        },
+        {
+            "test_name": "Non HDL Cholesterol (Calculated)",
+            "value": "103",
+            "unit": "mg/dL",
+            "ref_range": "CHD and CHD risk equivalent (10-year risk for CHD >20%) : : <130",
+            "status": "Normal",
+            "description": "The total cholesterol minus HDL cholesterol.",
+            "explanation": "This gives an estimate of the potentially harmful cholesterol that might cause blockages."
+        },
+        {
+            "test_name": "TOTAL: HDL RATIO",
+            "value": "2.95",
+            "unit": "",
+            "ref_range": "LESS THAN 4.5",
+            "status": "Normal",
+            "description": "The ratio of total cholesterol to HDL cholesterol.",
+            "explanation": "This is like comparing the grease to the cleaning crew. Lower ratios indicate better health."
+        },
+        {
+            "test_name": "LDL : HDL RATIO",
+            "value": "1.76",
+            "unit": "",
+            "ref_range": "LESS THAN 3.5",
+            "status": "Normal",
+            "description": "The ratio of LDL cholesterol to HDL cholesterol.",
+            "explanation": "This is like comparing the harmful sludge to the cleaning crew. Lower ratios indicate a healthier system."
+        },
+        {
+            "test_name": "TOTAL PROTEINS (Biuret)",
+            "value": "7.90",
+            "unit": "g/dL",
+            "ref_range": "5.7 - 8.2",
+            "status": "Normal",
+            "description": "The total amount of proteins in the blood.",
+            "explanation": "Proteins are the building blocks, like bricks in a wall, that maintain the structure and function of your body."
+        },
+        {
+            "test_name": "ALBUMIN (Colorimetric - BCG Dye)",
+            "value": "4.73",
+            "unit": "g/dL",
+            "ref_range": "3.5 - 5.2",
+            "status": "Normal",
+            "description": "A protein made by the liver, essential for maintaining fluid balance.",
+            "explanation": "Albumin acts like a sponge, holding water and maintaining balance in your body’s systems."
+        },
+        {
+            "test_name": "GLOBULIN (Calculated)",
+            "value": "3.17",
+            "unit": "g/dL",
+            "ref_range": "2.0 - 3.0",
+            "status": "High",
+            "description": "A group of proteins that play a role in the immune system.",
+            "explanation": "Globulins are like the body’s guards, identifying and neutralizing invaders like bacteria."
+        },
+        {
+            "test_name": "ALBUMIN:GLOBULIN RATIO",
+            "value": "1.49",
+            "unit": "",
+            "ref_range": "1.5 - 2.5",
+            "status": "Low",
+            "description": "The ratio of albumin to globulin proteins in the blood.",
+            "explanation": "This ratio reflects the balance between fluid regulation (albumin) and immunity (globulin)."
+        },
+        {
+            "test_name": "ALKALINE PHOSPHATASE (Serum)",
+            "value": "76",
+            "unit": "U/L",
+            "ref_range": "35 - 104",
+            "status": "Normal",
+            "description": "An enzyme found in the liver and bones.",
+            "explanation": "This enzyme is like a marker for liver and bone activity. Abnormal levels might indicate issues in these areas."
+        },
+        {
+            "test_name": "TOTAL BILIRUBIN",
+            "value": "0.49",
+            "unit": "mg/dL",
+            "ref_range": "0.3 - 1.2",
+            "status": "Normal",
+            "description": "A substance produced during the breakdown of red blood cells.",
+            "explanation": "Bilirubin is like a waste product from trucks breaking down. High levels might indicate issues in waste disposal."
+        },
+        {
+            "test_name": "DIRECT BILIRUBIN",
+            "value": "0.20",
+            "unit": "mg/dL",
+            "ref_range": "0 - 0.3",
+            "status": "Normal",
+            "description": "The portion of bilirubin processed by the liver.",
+            "explanation": "Direct bilirubin is like sorted trash ready for disposal. High levels might indicate a blockage."
+        },
+        {
+                "test_name": "THYROID STIMULATING",
+                "value": "7.17",
+                "unit": "mcIU/mL",
+                "ref_range": "0.4 - 4.2",
+                "status": "High",
+                "description": "A hormone produced by the pituitary gland to regulate the thyroid gland.",
+                "explanation": "TSH is like a thermostat for your thyroid. High levels mean your body is pushing the thyroid harder to produce hormones."
+            },
+            {
+                "test_name": "FREE THYROXINE (FT4)",
+                "value": "1.12",
+                "unit": "ng/dl",
+                "ref_range": "0.89 - 1.76",
+                "status": "Normal",
+                "description": "A hormone produced by the thyroid gland that regulates metabolism.",
+                "explanation": "FT4 acts like the fuel for your metabolism, helping to regulate energy use in your body."
+            },
+            {
+                "test_name": "VITAMIN D TOTAL (25 OH D)",
+                "value": "76.70",
+                "unit": "ng/ml",
+                "ref_range": "21 - 29",
+                "status": "High",
+                "description": "A measure of vitamin D, crucial for bone health and immune function.",
+                "explanation": "Vitamin D is like sunlight bottled in your body, keeping bones strong and supporting immunity."
+            },
+            {
+                "test_name": "ACTIVE VITAMIN B12 HOLO",
+                "value": "52.40",
+                "unit": "pmol/L",
+                "ref_range": "25.1 - 165",
+                "status": "Normal",
+                "description": "A form of vitamin B12 important for nerve function and red blood cell production.",
+                "explanation": "Vitamin B12 is like the electrician for your body, ensuring proper nerve signals and energy production."
+            },
+            {
+                "test_name": "TRI IODOTHYRONINE (T3)",
+                "value": "1.15",
+                "unit": "ng/ml",
+                "ref_range": "0.6 - 1.81",
+                "status": "Normal",
+                "description": "A thyroid hormone that helps regulate metabolism and energy levels.",
+                "explanation": "T3 is like the accelerator for your body's metabolism, speeding up energy use when needed."
+            },
+            {
+                "test_name": "THYROXINE (T4)",
+                "value": "7.80",
+                "unit": "mcg/dl",
+                "ref_range": "4.5 - 10.9",
+                "status": "Normal",
+                "description": "A hormone produced by the thyroid gland, important for metabolic regulation.",
+                "explanation": "T4 is the backup fuel for your metabolism, converting into the active T3 when needed."
+            },
+            {
+                "test_name": "Anti Microsomal Antibody or Anti",
+                "value": "1300.0",
+                "unit": "U/ml",
+                "ref_range": "<60 Negative >60 Positive SER 0",
+                "status": "Normal",
+                "description": "Antibodies produced by the immune system that can target thyroid tissues.",
+                "explanation": "These antibodies are like friendly fire in your body, potentially mistaking thyroid cells as invaders."
+            },
+            {
+                "test_name": "ANTIBODY TO",
+                "value": "209.10",
+                "unit": "U/ml",
+                "ref_range": "Upto 4.5 U/ml SER 1",
+                "status": "Normal",
+                "description": "Antibodies against specific proteins, often tested for autoimmune conditions.",
+                "explanation": "These antibodies are like detectives in your immune system that can sometimes go rogue."
+            },
+            {
+                "test_name": "PROLACTIN",
+                "value": "16.9",
+                "unit": "ng/mL",
+                "ref_range": "2.8 - 29.2",
+                "status": "Normal",
+                "description": "A hormone that stimulates milk production and affects reproductive health.",
+                "explanation": "Prolactin is like a signal to start milk production after childbirth and supports other reproductive functions."
+            },
+            {
+                "test_name": "HAEMATOLOGY",
+                "value": "2",
+                "unit": "Blood",
+                "ref_range": "04/06/2023 07:29:00",
+                "status": "Normal",
+                "description": "A broad category of tests related to blood and its components.",
+                "explanation": "This serves as a health snapshot, monitoring the overall balance and health of your blood system."
+            }        
+    
+    
+]
