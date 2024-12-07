@@ -11,6 +11,7 @@ function Visualization() {
     const { fileName } = location.state || {};
     const [testCategories, setTestCategories] = useState([]);
     const [calmingMessage, setCalmingMessage] = useState(""); // State for calming message
+    const [showSupportButton, setShowSupportButton] = useState(true); // State for Emotional Support button visibility
     const [error, setError] = useState("");
 
     const chartTypeAssignments = [
@@ -25,17 +26,6 @@ function Visualization() {
     ];
 
     useEffect(() => {
-        // Load calming messages from the JSON file
-        import("./calmingmessages.json")
-            .then((data) => {
-                const messages = data.messages;
-                const randomMessage = messages[Math.floor(Math.random() * messages.length)];
-                setCalmingMessage(randomMessage);
-            })
-            .catch((err) => {
-                console.error("Failed to load calming messages:", err);
-            });
-
         if (fileName === "R10931673_SANJANA_U_050623105552.pdf") {
             import("./medical_report_extracted.json")
                 .then((data) => {
@@ -51,6 +41,24 @@ function Visualization() {
                 });
         }
     }, [fileName]);
+
+    const handleEmotionalSupportClick = () => {
+        import("./calmingmessages.json")
+            .then((data) => {
+                const messages = data.messages;
+                const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+                setCalmingMessage(randomMessage);
+                setShowSupportButton(false);
+            })
+            .catch((err) => {
+                console.error("Failed to load calming messages:", err);
+            });
+    };
+
+    const handleCloseCalmingMessage = () => {
+        setCalmingMessage("");
+        setShowSupportButton(true);
+    };
 
     const generateChartData = (tests) => ({
         labels: tests.map((test) => test["Test Name"]),
@@ -77,13 +85,22 @@ function Visualization() {
 
     return (
         <div style={styles.container}>
+            <div style={styles.header}>
+                <h1 style={styles.title}>Medical Test Visualization</h1>
+                {showSupportButton && (
+                    <button style={styles.emotionalSupportButton} onClick={handleEmotionalSupportClick}>
+                        Emotional Support
+                    </button>
+                )}
+            </div>
+
             {calmingMessage && (
                 <div style={styles.calmingMessageContainer}>
+                    <button style={styles.closeButton} onClick={handleCloseCalmingMessage}>×</button>
                     <p style={styles.calmingMessage}>{calmingMessage}</p>
                 </div>
             )}
 
-            <h1 style={styles.title}>Medical Test Visualization</h1>
             <p style={styles.description}>
                 File Name: <strong>{fileName || "No file uploaded"}</strong>
             </p>
@@ -149,24 +166,49 @@ const styles = {
         backgroundColor: "#f9f9f9",
         minHeight: "100vh",
     },
+    header: {
+        width: "100%",
+        display: "flex",
+        justifyContent: "space-between",
+        alignItems: "center",
+    },
+    title: {
+        fontSize: "2rem",
+        color: "#008080",
+    },
+    emotionalSupportButton: {
+        padding: "10px 20px",
+        fontSize: "1rem",
+        backgroundColor: "#ff6347",
+        color: "#fff",
+        border: "none",
+        borderRadius: "8px",
+        cursor: "pointer",
+        transition: "background-color 0.3s ease",
+    },
     calmingMessageContainer: {
         width: "100%",
         textAlign: "center",
         backgroundColor: "#f5f5f5",
         padding: "10px",
         borderRadius: "8px",
+        position: "relative",
         marginBottom: "20px",
         boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)",
+    },
+    closeButton: {
+        position: "absolute",
+        top: "10px",
+        right: "10px",
+        backgroundColor: "transparent",
+        border: "none",
+        fontSize: "1.5rem",
+        cursor: "pointer",
     },
     calmingMessage: {
         fontSize: "1.2rem",
         color: "#555",
         fontStyle: "italic",
-    },
-    title: {
-        fontSize: "2rem",
-        color: "#008080",
-        marginBottom: "20px",
     },
     description: {
         fontSize: "1rem",
@@ -180,24 +222,14 @@ const styles = {
         gap: "20px",
     },
     chartWrapper: {
-        flex: "1 1 calc(45% - 20px)", // Smaller chart size
         maxWidth: "45%",
         padding: "15px",
         backgroundColor: "#ffffff",
-        border: "1px solid #ddd",
         borderRadius: "8px",
-        boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)",
     },
     subtitle: {
         fontSize: "1.2rem",
         color: "#333",
-        marginBottom: "5px",
-        textAlign: "center",
-    },
-    chartDescription: {
-        fontSize: "0.9rem",
-        color: "#555",
-        marginBottom: "10px",
         textAlign: "center",
     },
     error: {
