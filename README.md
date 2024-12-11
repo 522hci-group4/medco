@@ -54,11 +54,9 @@ Before running the project, make sure you have the following installed on your s
 
 ### **Step 1: Clone the Repository**
 ```bash
-git clone https://github.com/your-username/medco.git
+git clone https://github.com/522hci-group4/medco.git
 cd medco
 ```
-
-> Replace `your-username` with the actual GitHub username or link to the repository.
 
 ---
 
