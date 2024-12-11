@@ -25,6 +25,7 @@ function Navbar() {
         <Link to="/medterms">Medical Jargons</Link>
         <Link to="/tips">Health Recommendations</Link>
         <Link to="/about">About Us</Link>
+        <Link to="/Logout">Logout</Link>
       </div>
 
       {/* Mobile Menu Toggle Button */}

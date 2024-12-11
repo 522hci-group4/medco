@@ -13,6 +13,7 @@ import Upload from "./pages/upload";
 import Visualization from "./pages/Visualization";
 import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
 import Medterm from './pages/medterm';
+import Logout from './pages/Logout';
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
           <Route path="/about" element={<><Navbar2 /><AboutUs /></>} />
           <Route path="/MedTerms" element={<><Navbar /><Medterm /></>} />
           <Route path="/Visualization" element={<><Navbar /><Visualization /></>} />
+          <Route path="/Logout" element={<><Navbar /><Logout /></>} />
         </Routes>
       </Router>
     </div>

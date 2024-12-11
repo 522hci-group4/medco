@@ -37,25 +37,6 @@ function Upload() {
 
         try {
 
-            const formData = new FormData();
-            formData.append("file", file);
-
-            // Send the file to the backend
-            const response = await fetch("http://localhost:5001/api/upload", {
-                method: "POST",
-                body: formData,
-            });
-
-            if (!response.ok) {
-                throw new Error("Failed to upload and parse the file");
-            }
-
-            const parsedResponse = await response.json();
-            console.log("Parsed Data:", parsedResponse);
-
-            //for medical terms , save it in localstorage. For visualisation: its passed directly to its page below
-            localStorage.setItem("parsedResponse", JSON.stringify(parsedResponse));
-
             const { data, error } = await supabase.storage
                 .from("pdf-uploads")
                 .upload(`uploads/${userId}/${file.name}`, file, {
@@ -73,7 +54,6 @@ function Upload() {
             navigate("/visualization", {
                 state: {
                     fileName: file.name,
-                    parsedData: parsedResponse,
                 },
             });
         } catch (error) {
