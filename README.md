@@ -18,7 +18,6 @@ MedCo is a web application designed to empower users with chronic diseases by he
 - **Search**: Easily search for and understand complex medical terms present in your reports.
 
 ### 📊 **Health Trend Tracking**
-- **Historical Trends**: Track your health progress over time by comparing past and current records.
 - **Visual Analytics**: Access easy-to-understand charts, graphs, and insights based on your medical data.
 
 ### 💡 **Personalized Recommendations**
@@ -103,40 +102,6 @@ http://localhost:3000
 ```
 
 You should see the **MedCo** home page up and running.
-
----
-
-### **Step 4: Run Tests (Optional)**
-If you have tests configured, you can run them using:
-
-**Using npm:**
-```bash
-npm test
-```
-
-**Using yarn:**
-```bash
-yarn test
-```
-
-This will run any unit tests or integration tests in the project.
-
----
-
-### **Step 5: Build for Production**
-To create a production-ready build of the application, run:
-
-**Using npm:**
-```bash
-npm run build
-```
-
-**Using yarn:**
-```bash
-yarn build
-```
-
-This will generate a production-ready build in the `/build` folder, which can be deployed to production servers like AWS, Netlify, or Heroku.
 
 ---
 
