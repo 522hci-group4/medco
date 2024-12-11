@@ -17,7 +17,7 @@ MedCo is a web application designed to empower users with chronic diseases by he
 ### 🧪 **Medical Term Lookup**
 - **Search**: Easily search for and understand complex medical terms present in your reports.
 
-### 📊 **Health Trend Tracking**
+### 📊 **Health Data Analysis**
 - **Visual Analytics**: Access easy-to-understand charts, graphs, and insights based on your medical data.
 
 ### 💡 **Personalized Recommendations**
