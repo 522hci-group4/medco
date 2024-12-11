@@ -1,10 +1,7 @@
-Here is the full **README.md** file for the **MedCo: Chronic Disease Management Platform**.
 
----
+# **MedCo: Simplifying the Report**
 
-# **MedCo: Chronic Disease Management Platform**
-
-MedCo is a web application designed to empower users with chronic diseases by helping them easily view and understand their medical test reports. The platform provides a comprehensive solution for managing health insights, tracking trends, and receiving personalized suggestions, all in one place.
+MedCo is a web application designed to empower users with chronic diseases by helping them easily view and understand their medical test reports. The platform provides a comprehensive solution for managing health insights,  and receiving personalized suggestions, all in one place.
 
 ---
 
