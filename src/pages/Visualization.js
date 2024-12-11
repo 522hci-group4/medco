@@ -47,13 +47,14 @@ function Visualization() {
             .then((data) => {
                 const messages = data.messages;
                 const randomMessage = messages[Math.floor(Math.random() * messages.length)];
-                setCalmingMessage(randomMessage);
+                setCalmingMessage(`Note: ${randomMessage}`); // Add "Note:" prefix here
                 setShowSupportButton(false);
             })
             .catch((err) => {
                 console.error("Failed to load calming messages:", err);
             });
     };
+    
 
     const handleCloseCalmingMessage = () => {
         setCalmingMessage("");
@@ -189,7 +190,7 @@ const styles = {
     calmingMessageContainer: {
         width: "100%",
         textAlign: "center",
-        backgroundColor: "#f5f5f5",
+        backgroundColor: "#bfbfbf",
         padding: "10px",
         borderRadius: "8px",
         position: "relative",
@@ -198,8 +199,8 @@ const styles = {
     },
     closeButton: {
         position: "absolute",
-        top: "10px",
-        right: "10px",
+        bottom: "0px",
+        left: "1400px",
         backgroundColor: "transparent",
         border: "none",
         fontSize: "1.5rem",
