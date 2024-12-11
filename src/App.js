@@ -18,19 +18,18 @@ function App() {
   return (
     <div className="App">
       <Router>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/SignIn" element={<SignIn />} />
-        <Route path="/Register" element={<Register />} />
-        <Route path="/Upload" element={<Upload />} />     
-        <Route path="/Tips" element={<Tips />} />
-        <Route path='/Diet' element={<Diet />}/>
-        <Route path="/Workouts" element={<Workouts />} />
-        <Route path="/about" element={<AboutUs />} />
-        <Route path="/MedTerms" element={<Medterm/>} />
-        <Route path="/Visualization" element={<Visualization/>} />
-      </Routes>
+        <Routes>
+          <Route path="/" element={<><Navbar2 /><Home /></>} />
+          <Route path="/SignIn" element={<><Navbar2 /><SignIn /></>} />
+          <Route path="/Register" element={<><Navbar2 /><Register /></>} />
+          <Route path="/Upload" element={<><Navbar2 /><Upload /></>} />
+          <Route path="/Tips" element={<><Navbar /><Tips /></>} />
+          <Route path="/Diet" element={<><Navbar /><Diet /></>} />
+          <Route path="/Workouts" element={<><Navbar /><Workouts /></>} />
+          <Route path="/about" element={<><Navbar2 /><AboutUs /></>} />
+          <Route path="/MedTerms" element={<><Navbar /><Medterm /></>} />
+          <Route path="/Visualization" element={<><Navbar /><Visualization /></>} />
+        </Routes>
       </Router>
     </div>
   );
